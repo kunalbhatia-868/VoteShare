@@ -1,4 +1,3 @@
-from django.db.models import fields
 from rest_framework import serializers
 from . import models
 
@@ -10,7 +9,7 @@ class TagSerializer(serializers.ModelSerializer):
 
 
 class QuestionSerializer(serializers.ModelSerializer):
-    tags = TagSerializer(read_onlu=True, many=True)
+    tags = TagSerializer(read_only=True, many=True)
 
     class Meta:
         model = models.Question
