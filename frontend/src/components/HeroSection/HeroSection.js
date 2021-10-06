@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Button, Image } from "react-bootstrap";
+import { Container, Button} from "react-bootstrap";
 import "./HeroSection.css";
 
 export default function HeroSection() {
@@ -20,9 +20,7 @@ export default function HeroSection() {
         <Button> Create Poll</Button>
         <Button className="mx-3">View Top Polls</Button>
       </div>
-      <div className="right p-5">
-        <Image src="https://picsum.photos/400/400" fluid />
-      </div>
+      
     </Container>
   );
 }
