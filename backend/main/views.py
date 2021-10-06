@@ -1,4 +1,4 @@
-from django.http import response
+import re
 from django.shortcuts import render
 from . import models, serializers
 from rest_framework.decorators import api_view
@@ -19,9 +19,13 @@ def question_list_api(request):
 def question_create_api(request):
     response = serializers.QuestionSerializer(data=request.data)
     if response.is_valid():
+        tags = []
+        for tag in request.data['tags']:
+            tags.append(tag['id'])
+        response.validated_data['tags'] = tags
         response.save()
         return Response(response.data, status=status.HTTP_201_CREATED)
-    return Response(response.errors, status=status.HTTP_400_BAD_REQUEST)
+    return Response(response.data, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET', 'DELETE'])
