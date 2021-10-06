@@ -45,3 +45,11 @@ def question_crud_api(request, pk):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except question.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['GET'])
+def choice_list_api(request, question_id):
+    choices = models.Question.objects.get(id=question_id).choice_set.all()
+    print(choices)
+    response = serializers.ChoiceSerializer(choices, many=True)
+    return Response(response.data)
