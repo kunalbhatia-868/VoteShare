@@ -18,7 +18,7 @@ export default function HeroSection() {
           veniam tenetur. Reprehenderit, voluptatibus sit.
         </p>
         <Button href = "/"> Create Poll</Button>
-        <Button className="mx-3" href = "/">View Top Polls</Button>
+        <Button className="mx-3" href = "/polls">View Top Polls</Button>
       </div>
       
     </Container>
