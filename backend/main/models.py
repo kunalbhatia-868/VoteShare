@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -26,3 +27,9 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.content
+
+
+class Answer(models.Model):
+    question = models.ForeignKey('Question', on_delete=models.CASCADE)
+    choice = models.ForeignKey('Choice', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)

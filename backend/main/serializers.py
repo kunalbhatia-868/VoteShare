@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from . import models
+from django.contrib.auth.models import User
 
 
 class TagSerializer(serializers.ModelSerializer):
@@ -22,3 +23,12 @@ class ChoiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Choice
         fields = '__all__'
+
+
+class AnswerSerializer(serializers.Serializer):
+    question = QuestionSerializer(read_only=True)
+    choice = ChoiceSerializer(read_only=True)
+
+    class Meta:
+        models = models.Answer
+        exclude = ['user']
