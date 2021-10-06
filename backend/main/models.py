@@ -14,8 +14,8 @@ class Tag(models.Model):
 
 class Question(models.Model):
     content = models.CharField(max_length=256)
-    created_on = models.DateTimeField(timezone.now())
-    tags = models.ManyToManyField('Tag')
+    created_on = models.DateTimeField(default=timezone.now)
+    tags = models.ManyToManyField('Tag', related_name="tags")
 
     def __str__(self):
         return self.content
@@ -35,4 +35,4 @@ class Answer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.username + " ->  " + self.question.content
+        return self.user.username + " -  " + self.question.content
