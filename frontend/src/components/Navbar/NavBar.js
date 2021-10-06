@@ -5,7 +5,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 export default function NavBar() {
   return (
     <div>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar class="full-navbar" bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="/" style={{ fontSize: 24, fontWeight: 500 }}>
             VoteShare
@@ -15,6 +15,7 @@ export default function NavBar() {
             <Nav className="ms-auto">
               <Nav.Link href="/">Login</Nav.Link>
               <Nav.Link href="/">Signup</Nav.Link>
+              <Nav.Link href="/">Logout</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
