@@ -6,7 +6,7 @@ import "./HeroSection.css";
 export default function HeroSection() {
   return (
     <Container className="wrapper">
-      <div className="left">
+      <div className="left p-5">
         <h1>VoteShare- Landing Quote</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
@@ -17,8 +17,8 @@ export default function HeroSection() {
           repellendus, incidunt quae nisi doloremque reiciendis, fugit dolore
           veniam tenetur. Reprehenderit, voluptatibus sit.
         </p>
-        <Button> Create Poll</Button>
-        <Button className="mx-3">View Top Polls</Button>
+        <Button href = "/"> Create Poll</Button>
+        <Button className="mx-3" href = "/polls">View Top Polls</Button>
       </div>
       
     </Container>
