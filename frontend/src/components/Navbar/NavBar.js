@@ -5,7 +5,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 export default function NavBar() {
   return (
     <div>
-      <Navbar class="full-navbar" bg="dark" variant="dark" expand="lg">
+      <Navbar className="full-navbar" bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="/" style={{ fontSize: 24, fontWeight: 500 }}>
             VoteShare
