@@ -1,0 +1,13 @@
+.link {
+  text-decoration: none;
+}
+.signup-image {
+  background-image: url(../../static/images/signup.png);
+  background-size: cover;
+  background-position: center center;
+  background-color: #f8f9fa;
+}
+
+.signup {
+  min-height: 100vh;
+}
