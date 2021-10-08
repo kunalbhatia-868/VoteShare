@@ -13,8 +13,8 @@ export default function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/">Login</Nav.Link>
-              <Nav.Link href="/">Signup</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link href="/signup">Signup</Nav.Link>
               <Nav.Link href="/">Logout</Nav.Link>
             </Nav>
           </Navbar.Collapse>

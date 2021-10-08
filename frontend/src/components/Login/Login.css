@@ -1,0 +1,13 @@
+.login {
+  min-height: 100vh;
+}
+.bg-image {
+  background-image: url('https://www.cswaala.in/static/media/login.e4e39210.png');
+  background-size: cover;
+  background-position: center center;
+  background-color: #F8F9FA;
+}
+
+.link{
+    text-decoration: none;
+}
