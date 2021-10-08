@@ -16,6 +16,7 @@ class Question(models.Model):
     content = models.CharField(max_length=256)
     created_on = models.DateTimeField(default=timezone.now)
     tags = models.ManyToManyField('Tag', related_name="tags")
+    choices = models.ManyToManyField('Choice')
 
     def __str__(self):
         return self.content
@@ -23,7 +24,6 @@ class Question(models.Model):
 
 class Choice(models.Model):
     content = models.CharField(max_length=100)
-    question = models.ForeignKey('Question', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.content
