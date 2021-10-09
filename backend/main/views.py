@@ -59,3 +59,10 @@ def choice_list_api(request, question_id):
     print(choices)
     response = serializers.ChoiceSerializer(choices, many=True)
     return Response(response.data)
+
+
+@api_view(['GET'])
+def tags_list_api(request):
+    tags = models.Tag.objects.all()
+    response = serializers.TagSerializer(tags, many=True)
+    return Response(response.data)
