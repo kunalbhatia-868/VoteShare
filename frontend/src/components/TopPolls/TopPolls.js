@@ -16,6 +16,7 @@ export default function TopPolls() {
       });
   }, []);
 
+
   return (
     <>
       <header>
@@ -25,23 +26,24 @@ export default function TopPolls() {
       <section className="question-cards-wrapper">
         <Row xs={1} md={2} className="g-4">
           {data.map((question) => {
+            console.log(question.id)
             return (
               <Col key={question.id}>
-                <Card className="full-card">
-                  <Card.Img variant="top" src="" />
-                  <Card.Body>
-                    <Card.Title className="question-text">{question.content}</Card.Title>
-                    <Card.Body className="card-body">
-                      <ListGroup as="ol">
-                        {question.choices.map((choice)=>{
-                          return <ListGroup.Item as="li" key={choice.id}>
-                            {choice.content}
-                          </ListGroup.Item>
-                        })}
-                      </ListGroup>
+                  <Card className="full-card">
+                    <Card.Img variant="top" src="" />
+                    <Card.Body>
+                      <Card.Title className="question-text">{question.content}</Card.Title>
+                      <Card.Body className="card-body">
+                        <ListGroup as="ol">
+                          {question.choices.map((choice)=>{
+                            return <ListGroup.Item as="li" key={choice.id}>
+                              {choice.content}
+                            </ListGroup.Item>
+                          })}
+                        </ListGroup>
+                      </Card.Body>
                     </Card.Body>
-                  </Card.Body>
-                </Card>
+                  </Card>
               </Col>
             );
           })}
