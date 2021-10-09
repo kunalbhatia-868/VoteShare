@@ -8,6 +8,7 @@ import CreatePoll from "./components/CreatePolls/CreatePoll";
 import Login from "./components/Login/Login";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Signup from "./components/Signup/Signup";
+import QuestionDetail from "./components/QuestionDetail/QuestionDetail"; 
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact component={HeroSection} />
+          <Route path="/polls/:poll_id" component={QuestionDetail}/>
           <Route path="/polls" component={TopPolls} />
           <Route path="/create_poll" component={CreatePoll} />
           <Route path="/login" component={Login} />

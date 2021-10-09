@@ -13,7 +13,6 @@ export default function CreatePoll() {
         const temp_tags = tag_list.map((tag) => {
           return tag;
         });
-        console.log(temp_tags);
         setTags(temp_tags);
       })
       .catch((error) => console.log(error));
@@ -26,11 +25,11 @@ export default function CreatePoll() {
     };
   });
 
-  const [data,setData]=useState({
-    'content':'',
-    'choices':[],
-    'tags':[],
-  })
+  // const [data,setData]=useState({
+  //   'content':'',
+  //   'choices':[],
+  //   'tags':[],
+  // })
   
   return (
     <Container className="grid mt-5" fluid>
