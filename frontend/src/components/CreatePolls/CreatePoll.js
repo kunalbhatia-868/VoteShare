@@ -26,29 +26,20 @@ export default function CreatePoll() {
     };
   });
 
-  const handleSubmit=(e)=>{
-    fetch("api/create_question/",{
-      method:"POST",
-      headers:{
-        'Accept':'application/json',
-        'Content-Type': 'application/json',
-      },
-      body:JSON.stringify({
-        'content':e.state.content,
-        'tags':e.state.tags,
-        'choices':e.state.choices
-      })
-    })
-  }
-
+  const [data,setData]=useState({
+    'content':'',
+    'choices':[],
+    'tags':[],
+  })
+  
   return (
     <Container className="grid mt-5" fluid>
       <div className="box">
         <h4 className="text-center">Create your own Poll</h4>
-        <Form onSubmit={handleSubmit}>
+        <Form>
           <Form.Group className="mb-3">
             <Form.Label>Poll Question</Form.Label>
-            <Form.Control type="text" placeholder="Enter your question here" />
+            <Form.Control type="text" placeholder="Enter your question here"/>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Options</Form.Label>
