@@ -10,3 +10,29 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+
+.full-card {
+  width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+  border-width: 3px 4px 3px 5px;
+  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+  transform: rotate(2deg);
+}
+
+.col {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ol.list-group {
+  font-family: ui-rounded;
+  font-size: larger;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+}
+
+.card-title {
+  margin-bottom: 1.5rem;
+  font-size: larger;
+  padding-left: inherit;
+  font-family: monospace;
+}

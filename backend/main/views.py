@@ -20,9 +20,15 @@ def question_create_api(request):
     response = serializers.QuestionSerializer(data=request.data)
     if response.is_valid():
         tags = []
+        choices = []
         for tag in request.data['tags']:
             tags.append(tag['id'])
+
+        for choice in request.data['choices']:
+            choices.append(choice['id'])
+
         response.validated_data['tags'] = tags
+        response.validated_data['choices'] = choices
         response.save()
         return Response(response.data, status=status.HTTP_201_CREATED)
     return Response(response.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -49,7 +55,14 @@ def question_crud_api(request, pk):
 
 @api_view(['GET'])
 def choice_list_api(request, question_id):
-    choices = models.Question.objects.get(id=question_id).choice_set.all()
+    choices = models.Question.objects.get(id=question_id).choices
     print(choices)
     response = serializers.ChoiceSerializer(choices, many=True)
+    return Response(response.data)
+
+
+@api_view(['GET'])
+def tags_list_api(request):
+    tags = models.Tag.objects.all()
+    response = serializers.TagSerializer(tags, many=True)
     return Response(response.data)
